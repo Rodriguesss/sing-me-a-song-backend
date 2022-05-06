@@ -1,7 +1,7 @@
 import supertest from "supertest";
 import app from "../../src/app.js";
 import { prisma } from "../../src/database.js";
-import { recommendationFactory, findRecommendationDatabaseSeed } from "../factories/recommendationFactory.js";
+import { recommendationIntegrationFactory, findRecommendationDatabaseSeed } from "../factories/recommendationFactory.js";
 
 async function disconnect() {
   await prisma.$disconnect();
@@ -74,9 +74,15 @@ describe("POST /recommendations", () => {
   });
 
   it("should return 201", async () => {
-    const { status } = await supertest(app).post(`${ENDPOINT}`).send(recommendationFactory);
+    const { status } = await supertest(app).post(`${ENDPOINT}`).send(recommendationIntegrationFactory);
 
     expect(status).toEqual(201);
+  });
+
+  it("should return 500", async () => {
+    const { status } = await supertest(app).post(`${ENDPOINT}`).send(recommendationIntegrationFactory);
+
+    expect(status).toEqual(500);
   });
 });
 

@@ -1,7 +1,6 @@
 # Sing me a song
 
-Uma aplicação feita em NodeJS, utilizando o Prisma ORM juntamente com o Postgres.
-
+Uma aplicação em NodeJS, utilizando o Prisma ORM juntamente com o Postgres. Para realizar os testes de integração e os teste unitarios foi utilizado o Jest.
 
 ## Rodar projeto
 

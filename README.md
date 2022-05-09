@@ -22,6 +22,8 @@ Com as dependências instaladas rode o comando abaixo para criar o banco de dado
 
 ### `npx dotenv -e .env.test migrate prisma`
 
+Lembre-se de configurar o banco de dados atraves do arquivo ".env.test" na raiz do projeto.
+
 Com o banco criado rode o comando para popula-lo:
 
 ### `npm run seed`
